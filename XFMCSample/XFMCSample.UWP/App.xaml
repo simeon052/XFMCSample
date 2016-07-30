@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="XFMCSample.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XFMCSample.UWP"
+    RequestedTheme="Light">
+
+</Application>
