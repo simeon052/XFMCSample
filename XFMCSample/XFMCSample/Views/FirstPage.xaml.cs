@@ -19,7 +19,8 @@ namespace XFMCSample.Views
 
         private void Button1_ClickedEvent(object sender, EventArgs e)
         {
-            this.CountLabel.Text = $"Button is clicked [{++c}]!!!!";
+            this.CountLabel.Text = $"Button is clicked [{++c}]" + (c == 1 ? " time" : " times") +"!!!!";
+
         }
     }
 }
