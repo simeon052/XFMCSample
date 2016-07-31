@@ -2,5 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFMCSample.Views.SecondPage">
-  <Label Text="Second View" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout>
+    <Label Text="Second View" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Button x:Name="BackToFirst" Text="Back to First" Command="{Binding BackToFirst}"/>
+  </StackLayout>    
 </ContentPage>
