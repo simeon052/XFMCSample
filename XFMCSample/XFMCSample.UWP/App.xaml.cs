@@ -58,7 +58,9 @@ namespace XFMCSample.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
+                //                Xamarin.Forms.Forms.Init(e);
+                var setup = new Setup(rootFrame, e);
+                setup.Initialize();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

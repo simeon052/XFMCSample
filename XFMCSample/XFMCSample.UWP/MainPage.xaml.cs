@@ -12,16 +12,23 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Xamarin.Forms.Platform.UWP;
+using MvvmCross.Core.Views;
+using MvvmCross.Platform;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Forms.Presenter.WindowsUWP;
 
 namespace XFMCSample.UWP
 {
-    public sealed partial class MainPage
+    public sealed partial class MainPage : WindowsPage
     {
         public MainPage()
         {
             this.InitializeComponent();
+            Mvx.Resolve<IMvxAppStart>().Start();
 
-            LoadApplication(new XFMCSample.App());
+            var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsWindowsUWPPagePresenter;
+            LoadApplication(presenter.MvxFormsApp);
         }
     }
 }
