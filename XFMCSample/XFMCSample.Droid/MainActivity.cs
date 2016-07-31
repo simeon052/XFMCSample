@@ -21,15 +21,14 @@ namespace XFMCSample.Droid
         {
             base.OnCreate(bundle);
 
-            var setup = new Setup(this.ApplicationContext);
-            setup.Initialize();
+            new Setup(this.ApplicationContext)
+                .Initialize();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            var mvxFormsApp = new MvxFormsApp();
-            LoadApplication(mvxFormsApp);
-
             var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsDroidPagePresenter;
-            presenter.MvxFormsApp = mvxFormsApp;
+            presenter.MvxFormsApp = new MvxFormsApp();
+
+            LoadApplication(presenter.MvxFormsApp);
 
             Mvx.Resolve<IMvxAppStart>().Start();
         }
