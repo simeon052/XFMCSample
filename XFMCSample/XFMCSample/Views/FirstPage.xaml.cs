@@ -1,7 +1,4 @@
-﻿using System;
-
-using Xamarin.Forms;
-using XFMCSample.ViewModels;
+﻿using Xamarin.Forms;
 
 namespace XFMCSample.Views
 {
@@ -10,7 +7,6 @@ namespace XFMCSample.Views
         public FirstPage()
         {
             InitializeComponent();
-//            this.BindingContext = new XFMCSample.ViewModels.FirstViewModel();
         }
 
     }
