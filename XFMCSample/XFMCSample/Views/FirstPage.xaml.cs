@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using XFMCSample.ViewModels;
 
 namespace XFMCSample.Views
 {
@@ -8,6 +9,5 @@ namespace XFMCSample.Views
         {
             InitializeComponent();
         }
-
     }
 }

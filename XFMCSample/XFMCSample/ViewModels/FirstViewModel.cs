@@ -28,5 +28,17 @@ namespace XFMCSample.ViewModels
             });
             }
         }
+
+        public ICommand MoveToSecond
+        {
+            get
+            {
+                return new MvxCommand(() =>
+                {
+                    ShowViewModel<SecondViewModel>();
+                }
+                );
+            }
+        }
     }
 }
