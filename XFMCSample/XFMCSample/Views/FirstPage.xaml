@@ -4,8 +4,8 @@
              x:Class="XFMCSample.Views.FirstPage">
   <StackLayout>
     <Label Text="This page is created by Xaml." VerticalOptions="Center" HorizontalOptions="Center" />
-    <Button x:Name="Button1"   Text="Click Me!!!!!!"  Command="{Binding Button1_ClickedEvent}"/>
+    <Button x:Name="Button1"   Text="Click Me!!!!!!"  Command="{Binding Button1_ClickedEvent}" BackgroundColor="Lime"/>
     <Label x:Name="CountLabel" Text="{Binding CountLabel}" VerticalOptions="Center" HorizontalOptions="Center" />
-    <Button x:Name="MoveToSecond" Text="Move to Second" Command="{Binding MoveToSecond}"/>
+    <Button x:Name="MoveToSecond" Text="Move to Second" Command="{Binding MoveToSecond}" BackgroundColor="Red"/>
   </StackLayout>
 </ContentPage>

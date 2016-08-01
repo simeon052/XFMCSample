@@ -4,6 +4,15 @@
              x:Class="XFMCSample.Views.SecondPage">
   <StackLayout>
     <Label Text="Second View" VerticalOptions="Center" HorizontalOptions="Center" />
-    <Button x:Name="BackToFirst" Text="Back to First" Command="{Binding BackToFirst}"/>
-  </StackLayout>    
+    <Button x:Name="BackToFirst" Text="Back to First" Command="{Binding BackToFirst}" BackgroundColor="Aqua"/>
+    <ListView x:Name="SampleListView" ItemsSource="{Binding SampleList}" BackgroundColor="Gray">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ImageCell Text="{Binding Name}" ImageSource="{Binding Image}" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  <ListView x:Name="listView"/>
+  </StackLayout>
+
 </ContentPage>
