@@ -1,7 +1,8 @@
 ﻿using MvvmCross.Core.ViewModels;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace XFMCSample.ViewModels
 {
@@ -18,7 +19,7 @@ namespace XFMCSample.ViewModels
         public class ListItem
         {
             public string Name { get; set; }
-            public string Image { get; set; }
+            public ImageSource Image { get; set; }
         }
 
         private ObservableCollection<ListItem> sampleList = new ObservableCollection<ListItem>();
@@ -30,10 +31,10 @@ namespace XFMCSample.ViewModels
 
         public SecondViewModel()
         {
-            sampleList.Add(new ListItem() { Name = "Person1", Image = "Image1.jpg" });
-            sampleList.Add(new ListItem() { Name = "Person2", Image = "Image2.jpg" });
-            sampleList.Add(new ListItem() { Name = "Person3", Image = "Image2.jpg" });
-            sampleList.Add(new ListItem() { Name = "Person4", Image = "Image3.jpg" });
+            var resourceAsm = Assembly.Load(new AssemblyName("XFMCSample.Res"));
+            sampleList.Add(new ListItem() { Name = "Person1", Image = ImageSource.FromResource("XFMCSample.Res.cat1.jpg", resourceAsm) });
+            sampleList.Add(new ListItem() { Name = "Person2", Image = ImageSource.FromResource("XFMCSample.Res.cat2.jpg", resourceAsm) });
+            sampleList.Add(new ListItem() { Name = "Person3", Image = ImageSource.FromResource("XFMCSample.Res.cat3.jpg", resourceAsm) });
         }
     }
 }
