@@ -12,7 +12,6 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-  <ListView x:Name="listView"/>
   </StackLayout>
 
 </ContentPage>
