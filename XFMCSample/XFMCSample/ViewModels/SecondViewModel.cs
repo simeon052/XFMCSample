@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Windows.Input;
 using Xamarin.Forms;
-
+using XFMCSample.Res;
 namespace XFMCSample.ViewModels
 {
     public class SecondViewModel : MvxViewModel
@@ -31,10 +31,9 @@ namespace XFMCSample.ViewModels
 
         public SecondViewModel()
         {
-            var resourceAsm = Assembly.Load(new AssemblyName("XFMCSample.Res"));
-            sampleList.Add(new ListItem() { Name = "Person1", Image = ImageSource.FromResource("XFMCSample.Res.cat1.jpg", resourceAsm) });
-            sampleList.Add(new ListItem() { Name = "Person2", Image = ImageSource.FromResource("XFMCSample.Res.cat2.jpg", resourceAsm) });
-            sampleList.Add(new ListItem() { Name = "Person3", Image = ImageSource.FromResource("XFMCSample.Res.cat3.jpg", resourceAsm) });
+            sampleList.Add(new ListItem() { Name = "Person1", Image = GetResourceImage.Get("XFMCSample.Res.cat1.jpg") });
+            sampleList.Add(new ListItem() { Name = "Person2", Image = GetResourceImage.Get("XFMCSample.Res.cat2.jpg") });
+            sampleList.Add(new ListItem() { Name = "Person3", Image = GetResourceImage.Get("XFMCSample.Res.cat3.jpg") });
         }
     }
 }
