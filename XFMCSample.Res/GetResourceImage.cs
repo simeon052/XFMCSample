@@ -13,12 +13,8 @@ namespace XFMCSample.Res
 
         public static ImageSource Get(string key)
         {
-            var assembly = typeof(GetResourceImage).GetTypeInfo().Assembly;
-            foreach (var res in assembly.GetManifestResourceNames())
-            {
-                System.Diagnostics.Debug.WriteLine("found resource: " + res);
-            }
-            return ImageSource.FromResource(key);
+            var resourceInfo = typeof(GetResourceImage).GetTypeInfo().Assembly.FullName.Split(',');
+            return ImageSource.FromResource($"{ resourceInfo[0]}.{key}");
         } 
     }
 }
