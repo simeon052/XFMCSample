@@ -48,9 +48,9 @@ namespace XFMCSample.ViewModels
 
         public SecondViewModel()
         {
-            //sampleList.Add(new ListItem() { Name = "路上の子猫", Image = GetResourceImage.Get("cat1.jpg") });
-            //sampleList.Add(new ListItem() { Name = "黒猫 クロネコ", Image = GetResourceImage.Get("cat2.jpg") });
-            //sampleList.Add(new ListItem() { Name = "寝転ぶ子猫", Image = GetResourceImage.Get("cat3.jpg") });
+            sampleList.Add(new ListItem() { Name = "路上の子猫", Image = GetResourceImage.Get("cat1.jpg") });
+            sampleList.Add(new ListItem() { Name = "黒猫 クロネコ", Image = GetResourceImage.Get("cat2.jpg") });
+            sampleList.Add(new ListItem() { Name = "寝転ぶ子猫", Image = GetResourceImage.Get("cat3.jpg") });
         }
     }
 }
