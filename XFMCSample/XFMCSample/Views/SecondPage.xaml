@@ -5,6 +5,7 @@
   <StackLayout>
     <Label Text="Second View" VerticalOptions="Center" HorizontalOptions="Center" />
     <Button x:Name="BackToFirst" Text="Back to First" Command="{Binding BackToFirst}" BackgroundColor="Aqua"/>
+    <Button x:Name="PicturePicker" Text="Picture Picker" Command="{Binding PickPicture}"/>
     <ListView x:Name="SampleListView" ItemsSource="{Binding SampleList}" BackgroundColor="Gray">
       <ListView.ItemTemplate>
         <DataTemplate>

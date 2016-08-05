@@ -4,6 +4,8 @@ using System.Reflection;
 using System.Windows.Input;
 using Xamarin.Forms;
 using XFMCSample.Res;
+using Plugin.Media;
+
 namespace XFMCSample.ViewModels
 {
     public class SecondViewModel : MvxViewModel
@@ -26,8 +28,22 @@ namespace XFMCSample.ViewModels
         public ObservableCollection<ListItem> SampleList
         {
             get { return sampleList; }
-            set { sampleList = value; }
+            set {
+                sampleList = value;
+            }
         }
+
+        public ICommand PickPicture
+        {
+            get
+            {
+                return new MvxAsyncCommand(async () => {
+                    var file = await CrossMedia.Current.PickPhotoAsync();
+                    SampleList.Add(new ListItem() { Name = file.Path, Image = ImageSource.FromFile(file.Path)});
+                });
+            }
+        }
+
 
         public SecondViewModel()
         {
