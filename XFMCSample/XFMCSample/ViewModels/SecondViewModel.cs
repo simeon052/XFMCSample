@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using XFMCSample.Res;
 using Plugin.Media;
+using System.IO;
 
 namespace XFMCSample.ViewModels
 {
@@ -39,7 +40,7 @@ namespace XFMCSample.ViewModels
             {
                 return new MvxAsyncCommand(async () => {
                     var file = await CrossMedia.Current.PickPhotoAsync();
-                    SampleList.Add(new ListItem() { Name = file.Path, Image = ImageSource.FromFile(file.Path)});
+                    SampleList.Add(new ListItem() { Name = Path.GetFileName(file.Path), Image = ImageSource.FromStream(() => file.GetStream()) });
                 });
             }
         }
@@ -47,9 +48,9 @@ namespace XFMCSample.ViewModels
 
         public SecondViewModel()
         {
-            sampleList.Add(new ListItem() { Name = "路上の子猫", Image = GetResourceImage.Get("cat1.jpg") });
-            sampleList.Add(new ListItem() { Name = "黒猫 クロネコ", Image = GetResourceImage.Get("cat2.jpg") });
-            sampleList.Add(new ListItem() { Name = "寝転ぶ子猫", Image = GetResourceImage.Get("cat3.jpg") });
+            //sampleList.Add(new ListItem() { Name = "路上の子猫", Image = GetResourceImage.Get("cat1.jpg") });
+            //sampleList.Add(new ListItem() { Name = "黒猫 クロネコ", Image = GetResourceImage.Get("cat2.jpg") });
+            //sampleList.Add(new ListItem() { Name = "寝転ぶ子猫", Image = GetResourceImage.Get("cat3.jpg") });
         }
     }
 }
