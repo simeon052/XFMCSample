@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using Foundation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views.Presenters;
 using MvvmCross.Platform;
 using UIKit;
 
@@ -23,9 +19,7 @@ namespace XFMCSample.iOS
         {
 			Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-			var presenter = new MvxIosViewPresenter(this, Window);
-
-			var setup = new Setup(this, presenter);
+			var setup = new Setup(this, Window);
 			setup.Initialize();
 
 			var startup = Mvx.Resolve<IMvxAppStart>();
