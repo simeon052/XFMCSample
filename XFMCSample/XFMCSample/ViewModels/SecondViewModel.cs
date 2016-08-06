@@ -22,6 +22,7 @@ namespace XFMCSample.ViewModels
         public class ListItem
         {
             public string Name { get; set; }
+            public string Detail { get; set; }
             public ImageSource Image { get; set; }
         }
 
@@ -40,7 +41,7 @@ namespace XFMCSample.ViewModels
             {
                 return new MvxAsyncCommand(async () => {
                     var file = await CrossMedia.Current.PickPhotoAsync();
-                    SampleList.Add(new ListItem() { Name = Path.GetFileName(file.Path), Image = ImageSource.FromStream(() => file.GetStream()) });
+                    SampleList.Add(new ListItem() { Name = Path.GetFileName(file.Path), Detail= file.AlbumPath, Image = ImageSource.FromStream(() => file.GetStream()) });
                 });
             }
         }
@@ -48,9 +49,9 @@ namespace XFMCSample.ViewModels
 
         public SecondViewModel()
         {
-            sampleList.Add(new ListItem() { Name = "路上の子猫", Image = GetResourceImage.Get("cat1.jpg") });
-            sampleList.Add(new ListItem() { Name = "黒猫 クロネコ", Image = GetResourceImage.Get("cat2.jpg") });
-            sampleList.Add(new ListItem() { Name = "寝転ぶ子猫", Image = GetResourceImage.Get("cat3.jpg") });
+            sampleList.Add(new ListItem() { Name = "路上の子猫", Detail="A", Image = GetResourceImage.Get("cat1.jpg") });
+            sampleList.Add(new ListItem() { Name = "黒猫 クロネコ", Detail="B", Image = GetResourceImage.Get("cat2.jpg") });
+            sampleList.Add(new ListItem() { Name = "寝転ぶ子猫", Detail="C", Image = GetResourceImage.Get("cat3.jpg") });
         }
     }
 }

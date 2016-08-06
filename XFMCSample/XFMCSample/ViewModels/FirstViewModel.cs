@@ -40,5 +40,16 @@ namespace XFMCSample.ViewModels
                 );
             }
         }
+        public ICommand MoveToThird
+        {
+            get
+            {
+                return new MvxCommand(() =>
+                {
+                    ShowViewModel<ThirdViewModel>();
+                }
+                );
+            }
+        }
     }
 }

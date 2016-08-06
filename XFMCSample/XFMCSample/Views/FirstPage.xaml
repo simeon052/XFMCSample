@@ -7,5 +7,6 @@
     <Button x:Name="Button1"   Text="Click Me!!!!!!"  Command="{Binding Button1_ClickedEvent}" BackgroundColor="Lime"/>
     <Label x:Name="CountLabel" Text="{Binding CountLabel}" VerticalOptions="Center" HorizontalOptions="Center" />
     <Button x:Name="MoveToSecond" Text="Move to Second" Command="{Binding MoveToSecond}" BackgroundColor="Red"/>
+    <Button x:Name="MoveToThird" Text="Move to Third" Command="{Binding MoveToThird}" BackgroundColor="Purple"/>
   </StackLayout>
 </ContentPage>

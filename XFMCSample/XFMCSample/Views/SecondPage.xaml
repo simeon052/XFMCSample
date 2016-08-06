@@ -9,10 +9,31 @@
     <ListView x:Name="SampleListView" ItemsSource="{Binding SampleList}" BackgroundColor="Gray">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ImageCell Text="{Binding Name}" ImageSource="{Binding Image}" />
+          <ImageCell Text="{Binding Name}" ImageSource="{Binding Image}" Detail="{Binding Detail}" />
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    <TableView>
+        <TableView.Root>
+            <TableSection Title="Test">     
+                <EntryCell Label="EntryCell"></EntryCell>
+                <TextCell Text="Test"></TextCell>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Orientation="Horizontal" >
+                        <BoxView Color="Red"></BoxView>
+                        <StackLayout>
+                            <Label Text="News Item 1"></Label>
+                            <Label Text="News URL 1"></Label>
+                        </StackLayout>
+                        <BoxView x:Name="boxView" Color="Blue" ></BoxView>
+                        </StackLayout>      
+                    </ViewCell.View>
+                </ViewCell>
+            </TableSection>
+        </TableView.Root>
+    </TableView>
+
   </StackLayout>
 
 </ContentPage>
