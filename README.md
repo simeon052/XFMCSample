@@ -5,7 +5,7 @@ UWP : done
 
 Droid : done
 
-ios : done, Not tested yet
+ios : done
 
 WP  : Not yet
 
