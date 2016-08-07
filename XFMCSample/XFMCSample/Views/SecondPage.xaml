@@ -7,10 +7,10 @@
     <Label Text="Second View" VerticalOptions="Center" HorizontalOptions="Center" />
     <Button x:Name="BackToFirst" Text="Back to First" Command="{Binding BackToFirst}" BackgroundColor="Aqua"/>
     <Button x:Name="PicturePicker" Text="Picture Picker" Command="{Binding PickPicture}"/>
-    <ListView x:Name="SampleListView" ItemsSource="{Binding SampleList}" BackgroundColor="Gray" b:ListViewAttachedBehavior.Command="{Binding ItemTapped}" >
+    <ListView x:Name="SampleListView" ItemsSource="{Binding SampleList}" BackgroundColor="Gray" b:ListViewAttachedBehavior.Command="{Binding ItemTapped}">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ImageCell Text="{Binding Name}" ImageSource="{Binding Image}" Detail="{Binding Detail}"/>
+          <ImageCell Text="{Binding Name}" ImageSource="{Binding Image}" Detail="{Binding Detail}" />
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
@@ -18,14 +18,12 @@
         <TableView.Root>
             <TableSection Title="Test">     
                 <EntryCell Label="EntryCell"></EntryCell>
-                <TextCell Text="Test"></TextCell>
                 <ViewCell>
                     <ViewCell.View>
                         <StackLayout Orientation="Horizontal" >
                         <BoxView Color="Red"></BoxView>
                         <StackLayout>
-                            <Label Text="News Item 1"></Label>
-                            <Label Text="News URL 1"></Label>
+                            <Label Text="{Binding SampleList.Name}"></Label>
                         </StackLayout>
                         <BoxView x:Name="boxView" Color="Blue" ></BoxView>
                         </StackLayout>      

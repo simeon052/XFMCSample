@@ -2,9 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFMCSample.Views.ThirdPage">
-  <StackLayout>
-    <Entry x:Name="UrlText" Text="http://www.xamarin.com"/>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions    >
+      <ColumnDefinition Width="80*"/>
+      <ColumnDefinition Width="20*"/>
+    </Grid.ColumnDefinitions>
+
+    <Entry x:Name="UrlText" Text="http://www.xamarin.com" Grid.ColumnSpan="2"/>
+    <Label x:Name="UrlDisp" Text="{Binding Text}" BindingContext="{x:Reference Name=UrlText}" Grid.Row="1" />
+    <Button x:Name="Refresh" Text="Refresh" Grid.Row="1" Grid.Column="1"/>
     <WebView BindingContext="{x:Reference Name=UrlText}"
-           Source="{Binding Text}" WidthRequest="200" HeightRequest="1000"/>
-  </StackLayout>
+           Source="{Binding Text}" WidthRequest="200" HeightRequest="1000"
+           Grid.Row="2" Grid.ColumnSpan="2"/>
+  </Grid>
 </ContentPage>
