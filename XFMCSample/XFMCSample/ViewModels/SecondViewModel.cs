@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using XFMCSample.Res;
 using Plugin.Media;
 using System.IO;
+using XFMCSample.Model.DataStore;
 
 namespace XFMCSample.ViewModels
 {
@@ -26,6 +27,9 @@ namespace XFMCSample.ViewModels
                 return new  MvxCommand<ListItem>((i) =>
                 {
                     System.Diagnostics.Debug.WriteLine(i.Name);
+                    DataStore.GI().PhotoViewImageSource = i.Image;
+                    DataStore.GI().PhotoViewImageTitle = i.Name;
+                    ShowViewModel<PhotoViewViewModel>();
                 }
                 );
             }
