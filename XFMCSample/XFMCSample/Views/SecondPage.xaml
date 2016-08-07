@@ -5,7 +5,7 @@
              x:Class="XFMCSample.Views.SecondPage">
   <StackLayout>
     <Label Text="Second View" VerticalOptions="Center" HorizontalOptions="Center" />
-    <Button x:Name="BackToFirst" Text="Back to First" Command="{Binding BackToFirst}" BackgroundColor="Aqua"/>
+    <Button x:Name="BackToFirst" Text="Back to Top" Command="{Binding BackToFirst}" BackgroundColor="Aqua"/>
     <Button x:Name="PicturePicker" Text="Picture Picker" Command="{Binding PickPicture}"/>
     <ListView x:Name="SampleListView" ItemsSource="{Binding SampleList}" BackgroundColor="Gray" b:ListViewAttachedBehavior.Command="{Binding ItemTapped}">
       <ListView.ItemTemplate>
@@ -14,16 +14,17 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <TableView>
+    <!--<TableView>
         <TableView.Root>
-            <TableSection Title="Test">     
+            <TableSection Title="Table View">     
                 <EntryCell Label="EntryCell"></EntryCell>
                 <ViewCell>
                     <ViewCell.View>
                         <StackLayout Orientation="Horizontal" >
                         <BoxView Color="Red"></BoxView>
                         <StackLayout>
-                            <Label Text="{Binding SampleList.Name}"></Label>
+                          <Label Text="Line 1"></Label>
+                          <Label Text="Line 2"></Label>
                         </StackLayout>
                         <BoxView x:Name="boxView" Color="Blue" ></BoxView>
                         </StackLayout>      
@@ -31,8 +32,7 @@
                 </ViewCell>
             </TableSection>
         </TableView.Root>
-    </TableView>
-
+    </TableView>-->
   </StackLayout>
 
 </ContentPage>
