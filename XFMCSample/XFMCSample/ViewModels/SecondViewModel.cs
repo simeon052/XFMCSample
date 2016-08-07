@@ -19,6 +19,18 @@ namespace XFMCSample.ViewModels
             }
         }
 
+        public ICommand ItemTapped
+        {
+            get
+            {
+                return new  MvxCommand<ListItem>((i) =>
+                {
+                    System.Diagnostics.Debug.WriteLine(i.Name);
+                }
+                );
+            }
+        }
+
         public class ListItem
         {
             public string Name { get; set; }
