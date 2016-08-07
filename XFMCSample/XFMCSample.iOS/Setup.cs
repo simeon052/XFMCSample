@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace XFMCSample.iOS
 {
-    public class Setup : MvxIosSetup
+	public class Setup : MvxIosSetup
 	{
 		public Setup(MvxApplicationDelegate appDelegate, UIWindow window)
 			:base(appDelegate, window)
@@ -20,12 +20,12 @@ namespace XFMCSample.iOS
 			return new App();
 		}
 
-        protected override IMvxIosViewPresenter CreatePresenter()
-        {
-            Forms.Init();
+		protected override IMvxIosViewPresenter CreatePresenter()
+		{
+			Forms.Init();
 
-            return new MvxFormsIosPagePresenter(Window, new MvxFormsApp());
+			return new MvxFormsIosPagePresenter(Window, new MvxFormsApp());
 
-        }
-    }
+		}
+	}
 }
