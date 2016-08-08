@@ -1,5 +1,6 @@
 # XFMCSample
 Xamarin forms with MvvmCross Sample
+—ûK‚Ì‚½‚ß‚ÉAXamarin.Forms,XAML,MVVMCross‚ÅƒAƒvƒŠ‚ğ‘‚¢‚Ä‚İ‚é
 
 UWP : done
 

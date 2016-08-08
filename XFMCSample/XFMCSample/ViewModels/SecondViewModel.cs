@@ -20,6 +20,7 @@ namespace XFMCSample.ViewModels
             }
         }
 
+
         public ICommand ItemTapped
         {
             get
@@ -27,6 +28,17 @@ namespace XFMCSample.ViewModels
                 return new  MvxCommand<ListItem>((i) =>
                 {
                     System.Diagnostics.Debug.WriteLine(i.Name);
+                }
+                );
+            }
+        }
+
+        public ICommand ItemSelected
+        {
+            get
+            {
+                return new  MvxCommand<ListItem>((i) =>
+                {
                     DataStore.GI().PhotoViewImageSource = i.Image;
                     DataStore.GI().PhotoViewImageTitle = i.Name;
                     ShowViewModel<PhotoViewViewModel>();
