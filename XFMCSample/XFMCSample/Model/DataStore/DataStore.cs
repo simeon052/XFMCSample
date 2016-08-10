@@ -14,6 +14,7 @@ namespace XFMCSample.Model.DataStore
     {
         public ImageSource PhotoViewImageSource {get;set;}
         public string PhotoViewImageTitle { get; set; }
+        public string PhotoViewImageFullPath { get; set; }
 
         private DataStore()
         { }

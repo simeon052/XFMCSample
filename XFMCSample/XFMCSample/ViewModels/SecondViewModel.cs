@@ -41,6 +41,7 @@ namespace XFMCSample.ViewModels
                 {
                     DataStore.GI().PhotoViewImageSource = i.Image;
                     DataStore.GI().PhotoViewImageTitle = i.Name;
+                    DataStore.GI().PhotoViewImageFullPath = i.Detail;
                     ShowViewModel<PhotoViewViewModel>();
                 }
                 );
@@ -69,7 +70,7 @@ namespace XFMCSample.ViewModels
             {
                 return new MvxAsyncCommand(async () => {
                     var file = await CrossMedia.Current.PickPhotoAsync();
-                    SampleList.Add(new ListItem() { Name = Path.GetFileName(file.Path), Detail= file.AlbumPath, Image = ImageSource.FromStream(() => file.GetStream()) });
+                    SampleList.Add(new ListItem() { Name = Path.GetFileName(file.Path), Detail= file.Path, Image = ImageSource.FromStream(() => file.GetStream()) });
                 });
             }
         }
